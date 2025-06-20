@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Aplikasi Manajemen Buku Perpustakaan</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Aplikasi Manajemen Buku Perpustakaan</h1>
+
+        <form id="book-form">
+        <label>Judul: <input type="text" id="title" required></label><br>
+        <label>Penulis: <input type="text" id="author" required></label><br>
+        <label>Kategori: <input type="text" id="category" required></label><br>
+        <label>Tipe:
+        <select id="type">
+            <option value="ebook">Ebook</option>
+            <option value="printed">Printed Book</option>
+        </select>
+    </label><br>
+    <button type="submit">Tambah Buku</button>
+    <div class="error" id="error-msg"></div>
+    </form>
+
+    <h2>Filter Buku</h2>
+        <div class="filter-container">
+            <input type="text" id="filter-author" placeholder="Filter Penulis">
+            <input type="text" id="filter-category" placeholder="Filter Kategori">
+        </div>
+        <div class="book-list" id="book-list"></div>
+        <p>Total Buku: <span id="total-count">0</span></p>
+</body>
+<script type="module" src="app.js"></script>
+</html>

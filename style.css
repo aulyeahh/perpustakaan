@@ -1,0 +1,214 @@
+body {
+    font-family: "Poppins", sans-serif;
+    background-image: url(https://cdn.pixabay.com/photo/2015/12/04/09/13/leaves-1076307_1280.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    position: relative;
+    min-height: 0;
+    padding: 0%;
+    color: #333;
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+}
+
+h1{
+    color: #00060c;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+h2 {
+    margin-top: 40px;
+    color: #000000;
+    text-align: center;
+}
+
+form {
+    background-color: transparent;
+    padding: 30px 40px;
+    border: 2px solid rgba(255, 255, 255, .2);
+    backdrop-filter: blur(20px);
+    box-shadow: 0 0 10px rgba(0, 0, 0, .2);
+    border-radius: 10px;
+    color: black;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+label {
+    display: block;
+    margin: 10px 0;
+    font-weight: bold;
+}
+
+input[type="text"],
+select {
+    width: 100%;
+    max-width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    outline: none;
+    border: 2px solid rgba(255, 255, 255, .2);
+    border-radius: 40px;
+    font-size: 14px;
+}
+
+button[type="submit"] {
+    background-color: #3498db;
+    color: white;
+    top: 30px;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 6px;
+    margin-top: 15px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+}
+
+button[type="submit"]:hover {
+    background-color: #2980b9;
+}
+
+.error {
+    color: #e74c3c;
+    font-size: 14px;
+    margin-top: 10px;
+}
+
+/* Filter */
+#filter-author,
+#filter-category {
+    padding: 8px;
+    margin-right: 10px;
+    margin-top: 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 15px;
+    width: 100%;
+}
+
+.filter-container {
+    display: flex;
+    justify-self: center;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+}
+
+/* Daftar Buku */
+.book-list {
+    margin-top: 20px;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.book-item {
+    background-color: #ffffff;
+    border-left: 5px solid #3498db;
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.book-item strong {
+    font-size: 16px;
+    color: #2c3e50;
+}
+
+.book-item button {
+    background-color: #e74c3c;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 13px;
+    transition: background-color 0.3s ease;
+}
+
+.book-item button:hover {
+    background-color: #c0392b;
+}
+
+/* Total Buku */
+p {
+    text-align: center;
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+/* Animasi masuk (fade + slide up) */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Gaya untuk setiap item buku */
+.book-item {
+    animation: fadeInUp 0.4s ease;
+    background-color: #ffffffee;
+    border-left: 5px solid #3498db;
+    padding: 16px;
+    margin-bottom: 12px;
+    border-radius: 10px;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.08);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: transform 0.2s;
+}
+
+.book-item:hover {
+    transform: scale(1.02);
+}
+
+@media (max-width: 600px) {
+    form {
+        padding: 20px;
+        width: 90%;
+    }
+
+    #filter-author,
+    #filter-category {
+        width: 100%;
+        margin: 8px 0;
+    }
+
+    .filter-container{
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .book-list {
+        width: 95%;
+    }
+
+    .book-item {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .book-item button {
+        margin-top: 10px;
+        align-self: flex-end;
+    }
+}
